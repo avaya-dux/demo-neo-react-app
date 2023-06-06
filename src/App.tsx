@@ -35,7 +35,7 @@ function App() {
 
   return (
     <>
-      <AppLayout header={TopNavBar} mainContent={emptyWidget} />
+      <AppLayout header={TopNavBar} leftPanel={emptyWidget} mainContent={emptyWidget} />
     </>
   );
 }
