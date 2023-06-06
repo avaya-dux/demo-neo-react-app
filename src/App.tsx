@@ -1,35 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import "@avaya/neo-react/avaya-neo-react.css";
+
+import {
+  AppLayout,
+  Avatar,
+  Icon,
+  Image,
+  LeftNav,
+  TopNav,
+  Widget,
+} from "@avaya/neo-react";
+import { ReactNode } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const emptyWidget: ReactNode = (
+    <Widget empty>
+      <Icon icon="settings" aria-label="settings" />
+      <p>Widget goes here</p>
+    </Widget>
+  );
+
+  const TopNavBar = (
+    <TopNav
+      title="My First Neo React App"
+      logo={<Image src="/vite.svg" isDecorativeOrBranding />}
+    >
+      <>
+        <TopNav.IconButton aria-label="Settings" icon="settings" />
+      </>
+    </TopNav>
+  );
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <AppLayout header={TopNavBar} mainContent={emptyWidget} />
     </>
-  )
+  );
 }
 
 export default App
