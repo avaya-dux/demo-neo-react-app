@@ -11,6 +11,7 @@ import {
   Widget,
 } from "@avaya/neo-react";
 import { ReactNode } from "react";
+import PlayersPage from "./pages/PlayersPage";
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
       <p>Widget goes here</p>
     </Widget>
   );
-
+  
   const leftNav: ReactNode = (
     <LeftNav
       aria-label="Demo app left nav"
@@ -52,7 +53,7 @@ function App() {
       <AppLayout
         header={TopNavBar}
         leftPanel={leftNav}
-        mainContent={emptyWidget}
+        mainContent={<PlayersPage />}
       />
     </>
   );
