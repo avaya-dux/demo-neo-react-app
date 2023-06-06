@@ -21,6 +21,20 @@ function App() {
     </Widget>
   );
 
+  const leftNav: ReactNode = (
+    <LeftNav
+      aria-label="Demo app left nav"
+      currentUrl="http://active.com"
+    >
+      <LeftNav.TopLinkItem
+        icon="interaction-details"
+        label="Legendary Players"
+        href="/players"
+      />
+      <LeftNav.TopLinkItem icon="user-add" label="Teams" href="/teams" />
+    </LeftNav>
+  );
+
   const TopNavBar = (
     <TopNav
       title="My First Neo React App"
@@ -35,7 +49,11 @@ function App() {
 
   return (
     <>
-      <AppLayout header={TopNavBar} leftPanel={emptyWidget} mainContent={emptyWidget} />
+      <AppLayout
+        header={TopNavBar}
+        leftPanel={leftNav}
+        mainContent={emptyWidget}
+      />
     </>
   );
 }
