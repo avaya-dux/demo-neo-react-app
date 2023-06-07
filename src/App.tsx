@@ -39,7 +39,7 @@ function App() {
   const TopNavBar = (
     <TopNav
       title="My First Neo React App"
-      logo={<Image src="/vite.svg" isDecorativeOrBranding />}
+      logo={<Image src="/logo.svg" isDecorativeOrBranding />}
     >
       <>
         <TopNav.IconButton aria-label="Settings" icon="settings" />
