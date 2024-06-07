@@ -3,24 +3,23 @@ import "@avaya/neo-react/avaya-neo-react.css";
 
 import {
   AppLayout,
-  Avatar,
-  Icon,
+  // Icon,
   Image,
   LeftNav,
   TopNav,
-  Widget,
+  // Widget,
 } from "@avaya/neo-react";
 import { ReactNode } from "react";
 import PlayersPage from "./pages/PlayersPage";
 
 function App() {
 
-  const emptyWidget: ReactNode = (
-    <Widget empty>
-      <Icon icon="settings" aria-label="settings" />
-      <p>Widget goes here</p>
-    </Widget>
-  );
+  // const emptyWidget: ReactNode = (
+  //   <Widget empty>
+  //     <Icon icon="settings" aria-label="settings" />
+  //     <p>Widget goes here</p>
+  //   </Widget>
+  // );
   
   const leftNav: ReactNode = (
     <LeftNav

@@ -1,4 +1,5 @@
 import { Table } from "@avaya/neo-react";
+import { translations } from "../mock-data";
 
 export type Player = {
   name: string;
@@ -49,10 +50,13 @@ export const playerData: Player[] = [
 export function getPlayers(): Promise<Player[]> {
   return new Promise((resolve, reject) => {
     resolve(playerData);
-  });
+    reject(console.log("Failed fetching players"));
+  }
+  );
 }
 
 const PlayersPage = () => {
+  const theTranslations = translations;
   return (
     <section>
       <h1> Legends of Soccer</h1>
@@ -67,6 +71,7 @@ const PlayersPage = () => {
           { Header: "Assists", accessor: "assists" },
         ]}
         itemsPerPageOptions={[5, 10]}
+        translations= {theTranslations}
       />
     </section>
   );
